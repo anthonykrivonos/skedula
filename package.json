@@ -1,0 +1,57 @@
+{
+  "name": "skedula",
+  "version": "1.0.1",
+  "description": "Easily schedule interval-based processes in Node.js!",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "publish": "npm publish --access public",
+    "test": "mocha -r ts-node/register tst/**/*.spec.ts",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthonykrivonos/skedula.git"
+  },
+  "keywords": [
+    "skedula",
+    "scheduler",
+    "cron",
+    "node-cron",
+    "node",
+    "interval",
+    "time"
+  ],
+  "files": [
+    "dist/**/*"
+  ],
+  "author": "Anthony Krivonos",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anthonykrivonos/skedula/issues"
+  },
+  "homepage": "https://github.com/anthonykrivonos/skedula#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.0",
+    "@types/mocha": "^5.2.7",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "prettier": "^1.18.2",
+    "ts-node": "^8.3.0",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-etc": "~1.6.0",
+    "typescript": "^3.9.3"
+  },
+  "dependencies": {
+    "@types/node-cron": "^2.0.3",
+    "node-cron": "^2.0.3"
+  }
+}
