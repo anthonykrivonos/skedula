@@ -1,12 +1,11 @@
 {
   "name": "skedula",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Easily schedule interval-based processes in Node.js!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "publish": "npm publish --access public",
     "test": "mocha -r ts-node/register tst/**/*.spec.ts",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
